@@ -15,11 +15,7 @@ class PipelinerWidget(QtWidgets.QWidget):
         self.setWindowTitle("Launcher")
         self.setWindowIcon(
                 QtGui.QIcon(
-                    os.path.join(
-                        config.get_source_path(),
-                        'launcher.svg'
-                        )
-                    )
+                    os.path.join(config.get_source_path(), 'launcher.svg'))
                 )
 
         # widgets
