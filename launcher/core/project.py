@@ -1,27 +1,7 @@
-from typing import Dict, Any, List
-import os
-import json
-
 import os
 import json
 from typing import List
 from string import Formatter
-
-
-def get_source_path() -> str:
-    root_path = os.path.dirname(__file__)
-    root_path = os.path.dirname(root_path)
-    return os.path.join(root_path, "src")
-
-
-def load_config() -> Dict[str, Any]:
-
-    config_path = os.path.join(get_source_path(), "config.json")
-
-    with open(config_path, 'r') as file:
-        data = json.load(file)
-
-    return data
 
 
 def get_project_environ(project_path: str) -> List[str]:
@@ -43,8 +23,12 @@ def compute_environ(dcc: str, env: str, project_path: str):
     custom_environ = os.environ.copy()
     project_data, environ_data = None, None
 
-    project_environ_path = os.path.join(project_path, '_pipeline', '_project', 'project.json')
-    dcc_environ_path = os.path.join(project_path, '_pipeline', '_project', f'{dcc}.json')
+    project_environ_path = os.path.join(
+            project_path, '_pipeline', '_project', 'project.json'
+            )
+    dcc_environ_path = os.path.join(
+            project_path, '_pipeline', '_project', f'{dcc}.json'
+            )
 
     if not os.path.exists(project_environ_path):
         raise NameError("fail to found {project_environ_path}")
@@ -76,4 +60,3 @@ def compute_environ(dcc: str, env: str, project_path: str):
         custom_environ[key] = path.format(**new_dict)
 
     return custom_environ
-

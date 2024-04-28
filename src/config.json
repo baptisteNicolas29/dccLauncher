@@ -1,19 +1,21 @@
 {
     "DCC": {
         "maya": {
-            "icon": "{src}\\maya.svg",
+            "icon": "{src}\\icon\\maya.svg",
             "default": "2022",
             "versions": {
                 "2022": "C:\\Program Files\\Autodesk\\Maya2022\\bin\\maya.exe"
             }
         },
         "houdini": {
-            "icon": "{src}\\houdini.svg",
+            "icon": "{src}\\icon\\houdini.svg",
             "default": "20.0.625",
             "versions": {
                 "20.0.625": "C:\\Program Files\\Side Effects Software\\Houdini 20.0.625\\bin\\houdini.exe"
             }
         }
     },
-    "projects":[]
+    "projects":{
+        "custom_test": "F:\\1_infographie\\projects\\custom_test"
+    }
 }
